@@ -23,8 +23,7 @@ public class Array2 {
 				System.out.println( bingo[i*5+k] );
 			}
 		}
-		
-		
+			
 		
 	}
 
