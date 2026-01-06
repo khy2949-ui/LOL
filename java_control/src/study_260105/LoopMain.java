@@ -101,26 +101,52 @@ public class LoopMain {
 //			if(num == 11) break;
 //		}
 		
-		int com = (int)Math.floor(Math.random() * 50) + 1;
+//		int com = (int)Math.floor(Math.random() * 50) + 1;
+//		
+//		while(true) {
+//			System.out.println("1~50 중 입력 : ");
+//			int user = sc.nextInt();
+//			
+//			if( user > com ) {
+//				System.out.println("DOWN");
+//			}
+//			if( user < com ) {
+//				System.out.println("UP");
+//			}
+//			if( user == com ) {
+//				System.out.println("정답!");
+//				break;
+//			}
+//		}
+//		
 		
-		while(true) {
-			System.out.println("1~50 중 입력 : ");
-			int user = sc.nextInt();
 			
-			if( user > com ) {
-				System.out.println("DOWN");
+		// 과제
+			int winCount = 0;
+			int loseCount = 0;
+			int drawCount = 0;
+				
+			for(int i=1; i<=15; i++) {
+				int com = ( int)Math.floor(Math.random() * 3 ) + 1;
+				// 1-가위, 2-바위, 3-보
+					
+				System.out.print("1-가위, 2-바위, 3-보 : ");
+				int user = sc.nextInt();
+				System.out.println("나 : "+user+" , 컴퓨터 : "+com);
+				
+				if(user==com) {
+					System.out.println("비겼당ㅜ");
+					drawCount++;
+				}else if((user==1 && com==3) || (user==2 && com==1) || (user==3 && com==2)) {
+					System.out.println("이겼당~");
+					winCount++;
+				}else {
+					System.out.println("졌당ㅠ");
+					loseCount++;
+				}
+				System.out.println(winCount+"승 "+loseCount+"패 "+drawCount+"무 ");					
+				System.out.println("------------------------");
 			}
-			if( user < com ) {
-				System.out.println("UP");
-			}
-			if( user == com ) {
-				System.out.println("정답!");
-				break;
-			}
-		}
-		
-		
-			
 		
 		
 		

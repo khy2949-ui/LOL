@@ -1,0 +1,27 @@
+package study_260106;
+
+public class ArrayMain {
+
+	public static void main(String[] args) {
+		
+
+	}
+
+}
+
+
+
+/*
+	배열 - 동일한 데이터 타입의 데이터 저장공간이 연속적으로 나열되어 있는 구조
+	
+	
+	
+	
+	
+*/
+
+
+
+
+
+
