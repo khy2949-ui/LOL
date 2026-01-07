@@ -88,6 +88,10 @@ public class BingoGame {
 		
 		System.out.println("현재 완성 빙고: " + end + "줄");	
 		
+		if(end == 5) {
+			System.out.println("5줄 빙고 완성!!!");
+			break;
+		}
 	}	
 		
 //		System.out.println(Arrays.toString(bingo) );
