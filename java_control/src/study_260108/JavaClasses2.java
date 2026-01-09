@@ -3,6 +3,7 @@ package study_260108;
 public class JavaClasses2 {
 
 	public static void main(String[] args) {
+		
 
 		Movie movie = new Movie();
 		// new Movie() 생성자 메서드
