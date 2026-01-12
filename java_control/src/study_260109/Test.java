@@ -4,6 +4,8 @@ import java.util.Scanner;
 
 public class Test {
 
+	private static int n1;
+
 	public static void main(String[] args) {
 		// 문제1.
 		
@@ -22,6 +24,17 @@ public class Test {
 		// 문제2.
 		// a = 10, b = 20;
 		
+		int a =10;
+		int b = 20;
+		int temp = 0;
+		
+		if(a<=b) {
+			temp=a;
+			a=b;
+			b=temp;
+		}
+		System.out.println(a);
+		System.out.println(b);
 		
 		
 		
@@ -46,6 +59,15 @@ public class Test {
 		
 		// 문제5.
 		// 전체 초(second) = 3,726초
+		int s = 3726;
+		int m = 3726/60;
+		int h = m/60;
+		
+	    int second = s%60;
+	    int minute = m%60;
+	    	    
+	    System.out.print(h+"시"+minute+"분");
+	    System.out.println(second+"초");
 		
 		
 		
@@ -81,7 +103,9 @@ public class Test {
 		int n = 10;
 		int tot = 0;
 	
-		
+		for(int n1=0; n1<=10; n1++) {
+			tot+=n1;
+		}System.out.println(tot);
 		
 		// 문제 9.
 		int[] arr = {10, 20, 30, 40, 50};
@@ -113,8 +137,15 @@ public class Test {
 		
 		// 문제 11.
 		int[] nums = {3, 8, 15, 22, 7, 10};
+		int result = 0;
 		
-		
+		for(int i=0; i<nums.length; i++) {
+			if(nums[i]%2==0) {
+				result+=nums[i];
+			}else if(nums[i]%2==1) {
+				result-=nums[i];
+			}
+		}System.out.println(result);
 		
 		
 		
