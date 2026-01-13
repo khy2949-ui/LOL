@@ -6,6 +6,7 @@ public class Vending {
 	private String productName; // 음료수 이름
 	private int price; // 음료수 가격
 	private int stock; // 음료수 수량
+	
 	public Vending(String productName, int price, int stock) {
 		super();
 		this.productName = productName;
