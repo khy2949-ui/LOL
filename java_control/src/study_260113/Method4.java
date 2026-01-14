@@ -5,6 +5,10 @@ public class Method4 {
 		
 		DBConnect connect = new DBConnect();
 		
+		Product[] products = connect.selectData();
+		
+		System.out.println( products[0] );
+		
 	}
 
 }

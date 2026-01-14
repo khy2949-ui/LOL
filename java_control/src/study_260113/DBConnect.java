@@ -1,6 +1,6 @@
 package study_260113;
 
-import java.beans.Statement;
+import java.sql.Statement;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -39,14 +39,40 @@ public class DBConnect {
 		
 		// 쿼리문 보내기
 		try {
-			st = (Statement) conn.createStatement();			
+			st = conn.createStatement();  // Statement 생성
+			// 결과 받기
+			rs = st.executeQuery(sql); // 쿼리문 보내고 받은 결과를 ResultSet에 저장
+			
 		}catch(Exception e) {
 			System.out.println("쿼리문 실패");
 		}
-		
-		// 결과 받기
+				
 		
 		// 데이터들을 product 객체에 저장하기
+		try {
+			int i =0;
+			while(rs.next()) {
+				
+				Product temp = new Product(
+						rs.getString("item_name"), rs.getInt("price"),
+						rs.getInt("stock"),rs.getString("description")
+				);
+				
+				products[i] = temp;
+				i++;
+			
+			}
+		
+		}catch(Exception e) {
+			System.out.println("객체생성 실패");
+		}
+		
+		
+		
+		
+		
+		
+		
 		
 		return products;
 				
