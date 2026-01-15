@@ -2,7 +2,7 @@ package products;
 
 import common.Appliance;
 
-public class Refrigerator {  // 냉장고
+public class Refrigerator extends Appliance{  // 냉장고
 	
 	public Refrigerator() {
 		power();		

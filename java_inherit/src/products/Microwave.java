@@ -2,6 +2,7 @@ package products;
 
 import common.Appliance;
 
-public class Microwave {  // 전자레인지
+public abstract class Microwave extends Appliance{  // 전자레인지
+	
 
 }
