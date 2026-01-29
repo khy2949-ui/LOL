@@ -67,17 +67,6 @@ public class Study {
 //			
 //		System.out.println((double)avg);
 		
-		int sum = 0;
-		int count = 0;
-		int[] i = { 40, 70, 24, 55, 39, 23};
-		
-		if(i.length%2==0) {
-			count++;
-			sum = sum+i[0];
-		}
-			System.out.println("개수 : " + count);
-			System.out.println("합 : " + sum);
-		
 		
 		
 		
