@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.util.Scanner;
 
 public class MemberUpdate {
-	public static void update(Scanner sc) {
+	public static void update(Connection conn, Scanner sc) {
 		
 		System.out.print("바꿀 회원 아이디 : ");
 		String id_ = sc.nextLine();
@@ -19,18 +19,12 @@ public class MemberUpdate {
 		System.out.print("새로운 비밀번호  : ");
 		String password = sc.nextLine();
 		
-		String dbUrl = "jdbc:mysql://localhost:3306/library?serverTimezone=Asia/Seoul";
-		String dbUsr = "library";
-		String dbPwd = "1234";
 		
-		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		
 		// 예외처리
-		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			conn = DriverManager.getConnection(dbUrl, dbUsr, dbPwd);
+		try {			
 			// -------------------------------------------------
 			String sql = ""; 
 			sql += "update members set phone = ?, email = ?, password = ? where id = ?";
@@ -54,7 +48,7 @@ public class MemberUpdate {
 			try {
 				if (rs != null) { rs.close(); }
 				if (pstmt != null) { pstmt.close(); }
-				if (conn != null) { conn.close(); }			
+//				if (conn != null) { conn.close(); }			
 				} catch(Exception e) {
 					e.printStackTrace();								
 			}

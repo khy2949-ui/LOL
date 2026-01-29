@@ -7,21 +7,15 @@ import java.sql.ResultSet;
 import java.util.Scanner;
 
 public class MemberDelete {
-	public static void delete(Scanner sc) {
+	public static void delete(Connection conn, Scanner sc) {
 		System.out.print("삭제할 회원번호 : ");
 		int id = sc.nextInt();
 		
-		String dbUrl = "jdbc:mysql://localhost:3306/library?serverTimezone=Asia/Seoul";
-		String dbUsr = "library";
-		String dbPwd = "1234";
 		
-		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 			
-		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			conn = DriverManager.getConnection(dbUrl, dbUsr, dbPwd);
+		try {			
 			// -------------------------------------------------
 			String sql = "delete from members where id = ?"; 								
 			pstmt = conn.prepareStatement(sql);			
@@ -39,7 +33,7 @@ public class MemberDelete {
 			try {
 				if (rs != null) { rs.close(); }
 				if (pstmt != null) { pstmt.close(); }
-				if (conn != null) { conn.close(); }			
+//				if (conn != null) { conn.close(); }			
 				} catch(Exception e) {
 					e.printStackTrace();								
 			}

@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.util.Scanner;
 
 public class MemberInsert {
-	public static void insert(Scanner sc) {
+	public static void insert(Connection conn, Scanner sc) {
 		System.out.print("이름 : ");
 		String name = sc.nextLine();
 		System.out.print("생년월일 : ");
@@ -18,18 +18,11 @@ public class MemberInsert {
 		String email = sc.nextLine();
 		System.out.print("비밀번호 : ");
 		String password = sc.nextLine();
-				
-		String dbUrl = "jdbc:mysql://localhost:3306/library?serverTimezone=Asia/Seoul";
-		String dbUsr = "library";
-		String dbPwd = "1234";
 		
-		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 				
 		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			conn = DriverManager.getConnection(dbUrl, dbUsr, dbPwd);
 			// -------------------------------------------------
 			String sql = ""; 
 			sql += "insert into members (id, name, birth, phone, email, password) values";
@@ -54,7 +47,7 @@ public class MemberInsert {
 			try {
 				if (rs != null) { rs.close(); }
 				if (pstmt != null) { pstmt.close(); }
-				if (conn != null) { conn.close(); }			
+//				if (conn != null) { conn.close(); }			
 				} catch(Exception e) {
 					e.printStackTrace();								
 			}

@@ -8,22 +8,14 @@ import java.sql.ResultSet;
 import java.util.Scanner;
 
 public class MemberView {
-	public static void view(Scanner sc) {
+	public static void view(Connection conn, Scanner sc) {
 		System.out.print("상세보기 할 회원번호 : ");
 		int id = sc.nextInt();
-		
-		
-		String dbUrl = "jdbc:mysql://localhost:3306/library?serverTimezone=Asia/Seoul";
-		String dbUsr = "library";
-		String dbPwd = "1234";
-		
-		Connection conn = null;
+				
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		
 		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			conn = DriverManager.getConnection(dbUrl, dbUsr, dbPwd);
 			// -------------------------------------------------
 			String sql = "select * from members where id = ?"; 								
 			pstmt = conn.prepareStatement(sql);			
@@ -48,7 +40,7 @@ public class MemberView {
 			try {
 				if (rs != null) { rs.close(); }
 				if (pstmt != null) { pstmt.close(); }
-				if (conn != null) { conn.close(); }			
+//				if (conn != null) { conn.close(); }			
 				} catch(Exception e) {
 					e.printStackTrace();								
 			}
